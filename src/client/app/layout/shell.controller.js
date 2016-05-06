@@ -5,9 +5,8 @@
     .module('app.layout')
     .controller('ShellController', ShellController);
 
-  ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger'];
   /* @ngInject */
-  function ShellController($rootScope, $timeout, config, logger) {
+  function ShellController() {
     var vm = this;
 
     activate();

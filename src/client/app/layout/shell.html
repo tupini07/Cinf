@@ -1,16 +1,14 @@
 <div ng-controller="ShellController as vm">
-  <header class="clearfix">
-    <ht-top-nav navline="vm.navline"></ht-top-nav>
-  </header>
-  <section id="content" class="content">
-    <div ng-include="'app/layout/sidebar.html'"></div>
-
-    <div ui-view class="shuffle-animation"></div>
-
-    <div ngplus-overlay ngplus-overlay-delay-in="50" ngplus-overlay-delay-out="700" ngplus-overlay-animation="dissolve-animation">
-      <img src="images/busy.gif" />
-
-      <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
+  <nav class="navbar navbar-default" style="margin:0;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Cinf</a>
+      </div>
     </div>
-  </section>
+  </nav>
+  <div style="width:300px;background: #bfe8ff;padding: 10px;height: 100%;">
+    <div ng-include="'app/layout/sidebar.html'">
+      
+    </div>
+  </div>
 </div>
