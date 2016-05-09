@@ -8,7 +8,8 @@
     /* @ngInject */
     function SidebarController($scope) {
         var vm = this;
-
+        vm.date = new Date();
+        
         activate();
 
         function activate() {}
