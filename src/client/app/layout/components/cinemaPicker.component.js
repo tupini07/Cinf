@@ -3,21 +3,22 @@
 
       angular
           .module('app.layout')
-          .component('datePicker', {
+          .component('cinemaPicker', {
               bindings: {
-                  pkdt: '='
+                  cinemas: '='
               },
-              controller: datePickerController,
-              templateUrl: 'app/layout/components/datePicker.html'
+              controller: cinemaPickerController,
+              templateUrl: 'app/layout/components/cinemaPicker.html'
           });
 
   })();
 
   /**
-  Various configurations for the DatePicker popup. The 'pkdt' is a Date Javascript object.
+  Cinemas object is a dictionary of the cinemas passed by the controller, each key is a cinema and
+  it's value is either true or false. This object is mapped directly to a list of checkboxes.
   */
-  datePickerController.$inject = ['$scope'];
-  function datePickerController($scope) {
+  cinemaPickerController.$inject = ['$scope'];
+  function cinemaPickerController($scope) {
       var dtc = this;
       dtc.date = {}
       dtc.date.today = new Date();
