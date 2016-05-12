@@ -5,18 +5,13 @@
         .module('app.layout')
         .controller('SidebarController', SidebarController);
 
-    /* @ngInject */
-    function SidebarController($scope) {
+    SidebarController.$inject = ['cinemaservice']
+    function SidebarController(cinemaservice) {
         var vm = this;
-        vm.cinemas = { //this is returned by a Cinema Service
-            'cinepolis terramall': true,
-            'multiplaza escazu': false,
-            'ccm san pedro': false,
-            'ccm LNP': true
-        }
+        vm.cinemas = cinemaservice.getCinemas();
         vm.date = new Date();
         vm.doSearch = doSearch;
-        
+        vm.s = "asas";
         activate();
 
         function activate() {}
