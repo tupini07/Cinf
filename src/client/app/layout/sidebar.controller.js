@@ -19,9 +19,16 @@
         function activate() {}
 
         function doSearch() {
-            console.log('sadas');
-            $rootScope.$broadcast('pop', 'hey!');
-            console.log('poped');
+            $rootScope.$broadcast('searchStarted', {
+                date: vm.date,
+                cinemas: vm.cinemas.filter(filterChbx),
+                movies: vm.movies.filter(filterChbx)
+            });
+            $rootScope.$broadcast('searchFinished', 'TODO searchFinished Event');
+
+            function filterChbx(ob) {
+                return ob.selected;
+            }
         }
     }
 })();

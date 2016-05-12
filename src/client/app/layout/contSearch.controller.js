@@ -5,16 +5,27 @@
         .module('app.layout')
         .controller('ContentSearchController', ContentSearchController);
 
-    ContentSearchController.$inject = ['$rootScope']
-    function ContentSearchController($rootScope) {
+    ContentSearchController.$inject = ['$scope']
+
+    function ContentSearchController($scope) {
         var vm = this;
 
-        $rootScope.$on('pop', function(dat){
-          console.log('pop!');
-          console.log(dat);
-        });
+
         activate();
 
-        function activate() {}
+        function activate() {
+            var sStartedListener = $scope.$on('searchStarted', function(subsData, param) {
+                console.log(param);
+            });
+            var sFinishedListener = $scope.$on('searchFinished', function(subsData, param) {
+                console.log(param);
+            });
+
+            //unsubscribe from event
+            $scope.$on('$destroy', function() {
+                sStartedListener();
+                sFinishedListener();
+            });
+        }
     }
 })();
