@@ -1,27 +1,34 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('app.core')
-    .factory('cinemaservice', cinemaservice);
+    angular
+        .module('app.core')
+        .factory('cinemaservice', cinemaservice);
 
-  cinemaservice.$inject = ['$http', '$q', 'exception', 'logger'];
-  /* @ngInject */
-  function cinemaservice($http, $q, exception, logger) {
-    var service = {
-      getCinemas: getCinemas
-    };
+    cinemaservice.$inject = ['$http', '$q', 'exception', 'logger'];
+    /* @ngInject */
+    function cinemaservice($http, $q, exception, logger) {
+        var service = {
+            getCinemas: getCinemas
+        };
 
-    return service;
+        return service;
 
-    function getCinemas(){
-      return [
-        {name:'cinepolis terramall', value:true},
-        {name:'multiplaza escazu', value:false},
-        {name:'ccm san pedro', value:false},
-        {name:'ccm LNP', value:true},
-      ];
+        function getCinemas() {
+            return [{
+                name: 'cinepolis terramall',
+                selected: true
+            }, {
+                name: 'multiplaza escazu',
+                selected: false
+            }, {
+                name: 'ccm san pedro',
+                selected: false
+            }, {
+                name: 'ccm LNP',
+                selected: true
+            }, ];
+        }
+
     }
-
-  }
 })();

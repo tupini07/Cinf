@@ -1,13 +1,17 @@
 <div ng-controller="ShellController as vm">
-  <nav class="navbar navbar-default" style="margin:0;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Cinf</a>
-      </div>
+    <nav class="navbar navbar-default" style="margin:0;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Cinf</a>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-sm-2" id="siedebar" style="background: #bfe8ff;padding: 10px;height: 100%;">
+            <div ng-include="'app/layout/sidebar.html'"></div>
+        </div>
+        <div class="col-sm-10" id="mainContent" style="padding: 20px;">
+            <div ng-include="'app/layout/contSearch.html'"></div>
+        </div>
     </div>
-  </nav>
-  <div style="width:300px;background: #bfe8ff;padding: 10px;height: 100%;">
-    <div ng-include="'app/layout/sidebar.html'">
-    </div>
-  </div>
 </div>

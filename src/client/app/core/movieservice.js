@@ -27,33 +27,32 @@
         */
         function getMovies(date, cinemas) {
             var fCinema = filterSelectedCinemas(cinemas);
-            return [
-              {
+            return [{
                 name: 'movie1',
                 img: 'img1.jpg',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!'
-              },
-              {
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
+                selected: true
+            }, {
                 name: 'movie2',
                 img: 'img2.jpg',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!'
-              },
-              {
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
+                selected: true
+            }, {
                 name: 'movie3',
                 img: 'img3.jpg',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!'
-              },
-              {
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
+                selected: true
+            }, {
                 name: 'movie4',
                 img: 'img4.jpg',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!'
-              },
-              {
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
+                selected: true
+            }, {
                 name: 'movie5',
                 img: 'img5.jpg',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!'
-              },
-            ];
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
+                selected: true
+            }, ];
 
             return $http.get('/api/people')
                 .then(success)
@@ -73,8 +72,8 @@
         'cinemas' [{name,selected}]
         */
         function filterSelectedCinemas(cinemas) {
-            return cinemas.filter(function(cinema){
-              return cinema.selected;
+            return cinemas.filter(function(cinema) {
+                return cinema.selected;
             });
         }
     }
