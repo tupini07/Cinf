@@ -1,6 +1,7 @@
 <div ng-controller="SidebarController as vm">
   <date-picker pkdt="vm.date"></date-picker>
-  <checkbox-picker obj-list="vm.cinemas" lable="Cinemas"></checkbox-picker>
+  <checkbox-picker obj-list="vm.cinemas" key-name="name" selected-name="selected" lable="Cinemas"></checkbox-picker>
+  <checkbox-picker obj-list="vm.movies" key-name="name" selected-name="selected" lable="Movies"></checkbox-picker>
   <br />
   <button class="btn btn-md btn-success" ng-click="vm.doSearch">Search</button>
 </div>

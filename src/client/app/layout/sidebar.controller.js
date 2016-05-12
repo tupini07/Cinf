@@ -5,18 +5,20 @@
         .module('app.layout')
         .controller('SidebarController', SidebarController);
 
-    SidebarController.$inject = ['cinemaservice']
-    function SidebarController(cinemaservice) {
+    SidebarController.$inject = ['cinemaservice','movieservice']
+    function SidebarController(cinemaservice,movieservice) {
         var vm = this;
-        vm.cinemas = cinemaservice.getCinemas();
         vm.date = new Date();
+        vm.cinemas = cinemaservice.getCinemas();
+        vm.movies = movieservice.getMovies(vm.date, vm.cinemas);
+
         vm.doSearch = doSearch;
-        vm.s = "asas";
+
         activate();
 
         function activate() {}
         function doSearch(){
-
+          throw "Not implemented";
         }
     }
 })();

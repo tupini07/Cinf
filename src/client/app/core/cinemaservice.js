@@ -15,12 +15,12 @@
     return service;
 
     function getCinemas(){
-      return {
-        'cinepolis terramall': true,
-        'multiplaza escazu': false,
-        'ccm san pedro': false,
-        'ccm LNP': true
-      }
+      return [
+        {name:'cinepolis terramall', value:true},
+        {name:'multiplaza escazu', value:false},
+        {name:'ccm san pedro', value:false},
+        {name:'ccm LNP', value:true},
+      ];
     }
 
   }

@@ -3,15 +3,19 @@
 
   /**
   Takes a 2 attributes,
-    'obj-list' is a dictionary key:bool and displays a list of checkboxes based on it.
-    'lable' is a string and is the title displayed above the checkboxPicker
+    'lable' is the title that is displayed abode this component
+    'obj-list' is the array of object we want to create a checklistpicker for
+    'keyName' is the name in the object structure that represents the text we want next to each checkbox
+    'selectedName' is the name in the object structure that represents the selected state
   */
   angular
     .module('app.layout')
     .component('checkboxPicker', {
       bindings: {
         objList: '=',
-        lable: '@'
+        lable: '@',
+        keyName: '@',
+        selectedName: '@',
       },
       controller: checkboxPickerController,
       templateUrl: 'app/layout/components/checkboxPicker.html',
@@ -21,11 +25,9 @@
       vm.setAll = setAll;
 
       function setAll(val){
-        console.log(vm.objList);
-        for(var k in vm.objList){
-          vm.objList[k] = val;
+        for(var objv in vm.objList){
+          vm.objList[objv][vm.selectedName] = val;
         }
-        console.log(vm.objList);
       }
 
     }
