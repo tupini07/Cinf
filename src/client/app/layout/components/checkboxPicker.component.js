@@ -13,7 +13,20 @@
         objList: '=',
         lable: '@'
       },
-      templateUrl: 'app/layout/components/checkboxPicker.html'
+      controller: checkboxPickerController,
+      templateUrl: 'app/layout/components/checkboxPicker.html',
     });
+    function checkboxPickerController(){
+      var vm = this;
+      vm.setAll = setAll;
 
+      function setAll(val){
+        console.log(vm.objList);
+        for(var k in vm.objList){
+          vm.objList[k] = val;
+        }
+        console.log(vm.objList);
+      }
+
+    }
 })();
