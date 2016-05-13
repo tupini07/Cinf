@@ -37,27 +37,27 @@
             var fCinema = filterSelectedCinemas(cinemas);
             return [{
                 name: 'movie1',
-                img: 'img1.jpg',
+                img: 'https://unsplash.it/300/180/?random',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
                 selected: true
             }, {
                 name: 'movie2',
-                img: 'img2.jpg',
+                img: 'https://unsplash.it/200/180/?random',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
                 selected: true
             }, {
                 name: 'movie3',
-                img: 'img3.jpg',
+                img: 'https://unsplash.it/300/180/?random',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
                 selected: true
             }, {
                 name: 'movie4',
-                img: 'img4.jpg',
+                img: 'https://unsplash.it/250/180/?random',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
                 selected: true
             }, {
                 name: 'movie5',
-                img: 'img5.jpg',
+                img: 'https://unsplash.it/400/180/?random',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
                 selected: true
             }, ];
