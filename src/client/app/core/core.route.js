@@ -29,6 +29,14 @@
           title: 'Search'
         }
       },
+      {
+        state: '/movieDetail',
+        config: {
+          url: '/movieDetail/:movieName',
+          templateUrl: 'app/layout/movieDetail.html',
+          title: 'Movie Detail'
+        }
+      },
 
     ];
   }
