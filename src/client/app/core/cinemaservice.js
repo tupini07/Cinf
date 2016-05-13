@@ -3,11 +3,11 @@
 
     angular
         .module('app.core')
-        .factory('cinemaservice', cinemaservice);
+        .factory('cinemaService', cinemaService);
 
-    cinemaservice.$inject = ['$http', '$q', 'exception', 'logger'];
+    cinemaService.$inject = ['$http', '$q', 'exception', 'logger'];
     /* @ngInject */
-    function cinemaservice($http, $q, exception, logger) {
+    function cinemaService($http, $q, exception, logger) {
         var service = {
             getCinemas: getCinemas
         };

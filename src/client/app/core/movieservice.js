@@ -3,10 +3,10 @@
 
     angular
         .module('app.core')
-        .factory('movieservice', movieservice);
+        .factory('movieService', movieService);
 
-    movieservice.$inject = ['$timeout', '$http', '$q', 'exception', 'logger'];
-    function movieservice($timeout, $http, $q, exception, logger) {
+    movieService.$inject = ['$timeout', '$http', '$q', 'exception', 'logger'];
+    function movieService($timeout, $http, $q, exception, logger) {
         var service = {
             getMovies: getMovies,
             getMovieDetail: getMovieDetail,

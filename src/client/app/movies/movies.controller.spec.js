@@ -5,11 +5,11 @@ describe('moviesController', function() {
 
   beforeEach(function() {
     bard.appModule('app.movies');
-    bard.inject('$controller', '$log', '$q', '$rootScope', 'movieservice');
+    bard.inject('$controller', '$log', '$q', '$rootScope', 'movieService');
   });
 
   beforeEach(function() {
-    sinon.stub(movieservice, 'getPeople').returns($q.when(people));
+    sinon.stub(movieService, 'getPeople').returns($q.when(people));
     controller = $controller('moviesController');
     $rootScope.$apply();
   });

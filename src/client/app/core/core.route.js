@@ -22,10 +22,10 @@
         }
       },
       {
-        state: 'Display Seach Results',
+        state: '/',
         config: {
           url: '/',
-          templateUrl: 'app/layout/contSearch.html',
+          templateUrl: 'app/layout/searchCont.html',
           title: 'Search'
         }
       },

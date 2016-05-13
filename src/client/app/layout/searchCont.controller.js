@@ -3,11 +3,11 @@
 
     angular
         .module('app.layout')
-        .controller('ContentSearchController', ContentSearchController);
+        .controller('SearchContentController', SearchContentController);
 
-    ContentSearchController.$inject = ['$scope']
+    SearchContentController.$inject = ['$scope']
 
-    function ContentSearchController($scope) {
+    function SearchContentController($scope) {
         var vm = this;
 
 
@@ -19,10 +19,10 @@
             var searchRequestedListener = $scope.$on('searchRequested', function(subsData, promise) {
                 //result is the movies we searched for
                 promise.then(function(result) {
-                      console.log(result);
+                        console.log(result);
                     },
                     function(failedReason) {
-                      console.log('Promise Failed because: '+failedReason);
+                        console.log('Promise Failed because: ' + failedReason);
                     });
             });
 

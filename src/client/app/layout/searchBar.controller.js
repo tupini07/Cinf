@@ -3,19 +3,19 @@
 
     angular
         .module('app.layout')
-        .controller('SidebarController', SidebarController);
+        .controller('SearchBarController', SearchBarController);
 
-    SidebarController.$inject = ['$rootScope', 'cinemaservice', 'movieservice']
+    SearchBarController.$inject = ['$rootScope', 'cinemaService', 'movieService']
 
-    function SidebarController($rootScope, cinemaservice, movieservice) {
+    function SearchBarController($rootScope, cinemaService, movieService) {
         var vm = this;
         vm.date = new Date();
-        vm.cinemas = cinemaservice.getCinemas();
+        vm.cinemas = cinemaService.getCinemas();
         vm.doSearch = doSearch;
 
         // TODO Pointless... For the moment we will leave it but it makes no sense to display the movies
         // in the searchbar and in the search content.\\\
-        vm.movies = movieservice.getMovies(vm.date, vm.cinemas);
+        vm.movies = movieService.getMovies(vm.date, vm.cinemas);
 
         activate();
 
@@ -23,8 +23,8 @@
 
         function doSearch() {
             //Starts a search on the moviesearch service and broadcasts it's promise which is caught
-            //by the 'contSearchController'
-            $rootScope.$broadcast('searchRequested', movieservice.getMoviesPromise());
+            //by the 'searchContController'
+            $rootScope.$broadcast('searchRequested', movieService.getMoviesPromise());
         }
     }
 })();

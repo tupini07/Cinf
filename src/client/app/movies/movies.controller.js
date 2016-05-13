@@ -5,9 +5,9 @@
     .module('app.movies')
     .controller('moviesController', moviesController);
 
-  moviesController.$inject = ['$q', 'movieservice', 'logger'];
+  moviesController.$inject = ['$q', 'movieService', 'logger'];
   /* @ngInject */
-  function moviesController($q, movieservice, logger) {
+  function moviesController($q, movieService, logger) {
     var vm = this;
     vm.news = {
       title: 'cinef',
@@ -27,14 +27,14 @@
     }
 
     function getMessageCount() {
-      return movieservice.getMessageCount().then(function(data) {
+      return movieService.getMessageCount().then(function(data) {
         vm.messageCount = data;
         return vm.messageCount;
       });
     }
 
     function getPeople() {
-      return movieservice.getPeople().then(function(data) {
+      return movieService.getPeople().then(function(data) {
         vm.people = data;
         return vm.people;
       });
