@@ -11,24 +11,20 @@
         var vm = this;
         vm.date = new Date();
         vm.cinemas = cinemaservice.getCinemas();
-        vm.movies = movieservice.getMovies(vm.date, vm.cinemas);
         vm.doSearch = doSearch;
+
+        // TODO Pointless... For the moment we will leave it but it makes no sense to display the movies
+        // in the searchbar and in the search content.\\\
+        vm.movies = movieservice.getMovies(vm.date, vm.cinemas);
 
         activate();
 
         function activate() {}
 
         function doSearch() {
-            $rootScope.$broadcast('searchStarted', {
-                date: vm.date,
-                cinemas: vm.cinemas.filter(filterChbx),
-                movies: vm.movies.filter(filterChbx)
-            });
-            $rootScope.$broadcast('searchFinished', 'TODO searchFinished Event');
-
-            function filterChbx(ob) {
-                return ob.selected;
-            }
+            //Starts a search on the moviesearch service and broadcasts it's promise which is caught
+            //by the 'contSearchController'
+            $rootScope.$broadcast('searchRequested', movieservice.getMoviesPromise());
         }
     }
 })();

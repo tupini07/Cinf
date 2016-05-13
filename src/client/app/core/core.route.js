@@ -5,7 +5,7 @@
     .module('app.core')
     .run(appRun);
 
-  /* @ngInject */
+  appRun.$inject = ['routerHelper'];
   function appRun(routerHelper) {
     var otherwise = '/404';
     routerHelper.configureStates(getStates(), otherwise);
@@ -20,7 +20,16 @@
           templateUrl: 'app/core/404.html',
           title: '404'
         }
-      }
+      },
+      {
+        state: 'Display Seach Results',
+        config: {
+          url: '/',
+          templateUrl: 'app/layout/contSearch.html',
+          title: 'Search'
+        }
+      },
+
     ];
   }
 })();

@@ -14,17 +14,21 @@
         activate();
 
         function activate() {
-            var sStartedListener = $scope.$on('searchStarted', function(subsData, param) {
-                console.log(param);
-            });
-            var sFinishedListener = $scope.$on('searchFinished', function(subsData, param) {
-                console.log(param);
+
+            //recieves a promise of the movie search
+            var searchRequestedListener = $scope.$on('searchRequested', function(subsData, promise) {
+                //result is the movies we searched for
+                promise.then(function(result) {
+                      console.log(result);
+                    },
+                    function(failedReason) {
+                      console.log('Promise Failed because: '+failedReason);
+                    });
             });
 
             //unsubscribe from event
             $scope.$on('$destroy', function() {
-                sStartedListener();
-                sFinishedListener();
+                searchRequestedListener();
             });
         }
     }

@@ -5,18 +5,26 @@
         .module('app.core')
         .factory('movieservice', movieservice);
 
-    movieservice.$inject = ['$http', '$q', 'exception', 'logger'];
-    /* @ngInject */
-    function movieservice($http, $q, exception, logger) {
+    movieservice.$inject = ['$timeout', '$http', '$q', 'exception', 'logger'];
+    function movieservice($timeout, $http, $q, exception, logger) {
         var service = {
             getMovies: getMovies,
-            getMovieDetail: getMovieDetail
+            getMovieDetail: getMovieDetail,
+            getMoviesPromise: getMoviesPromise
         };
 
         return service;
 
         function getMovieDetail() {
             return $q.when(72);
+        }
+
+        function getMoviesPromise(searchParams) {
+            var deferred = $q.defer();
+            $timeout(function() {
+                deferred.resolve(getMovies(0,[]));
+            }, 1000);
+            return deferred.promise;
         }
 
         /**
