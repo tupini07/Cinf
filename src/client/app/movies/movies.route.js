@@ -17,7 +17,7 @@
         state: '/',
         config: {
           url: '/',
-          templateUrl: 'app/movies/searchCont.html',
+          templateUrl: 'app/movies/movieSearch.html',
           title: 'Search'
         }
       },

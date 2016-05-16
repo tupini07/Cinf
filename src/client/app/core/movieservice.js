@@ -9,14 +9,17 @@
 
   function movieService($timeout, $http, $q, exception, logger) {
     var service = {
-      getMovies: getMovies,
-      getMovieDetail: getMovieDetail,
-      getMoviesPromise: getMoviesPromise,
       getMovieByName: getMovieByName,
+      getMovieDetail: getMovieDetail,
+      searchMovies: searchMovies,
     };
-
     return service;
 
+    /**
+     * Gets a movie info from the server
+     * @param   {string} name The name of the movie 
+     * @returns {object} The promise for an object representing the movie or an empty one if none is found.
+     */
     function getMovieByName(name) {
       var deferred = $q.defer();
       $timeout(function () {
@@ -47,29 +50,39 @@
       return deferred.promise;
     }
 
-    function getMovieDetail() {
-      return $q.when(72);
+    /**
+     * Helper Function: 
+     * Returns an array containing the cinema objects where selected is true
+     * @param   {Array} cinemas Array of Cinema{} with property 'selected'
+     * @returns {Array} An array of the cinema{} where 'selected' is true
+     */
+    function filterSelectedCinemas(cinemas) {
+      return cinemas.filter(function (cinema) {
+        return cinema.selected;
+      });
     }
 
-    /*
-    Returns a promise of a movie list that corresponds to the searchParams.
-    'searchParams': {date: Date, cinemas:[{}], timeInterval: [] }
-    */
-    function getMoviesPromise(searchParams) {
+    /**
+     * Makes search request on the server with searchParams
+     * @param   {object} searchParams : {Date(date), [cinemas], Int(Hour Interval)}
+     * @returns {Array} Promise for a [{movie}] corresponding to searchParams
+     */
+    function searchMovies(searchParams) {
       var deferred = $q.defer();
       $timeout(function () {
-        deferred.resolve(getMovies(0, []));
+        deferred.resolve(getDummyMovies(0, []));
       }, 1000);
       return deferred.promise;
     }
 
+
+
+
+
     /**
-    Gets the movies that are being played on the specified date and on the specified cinemas.
-    'date' is a date object
-    'cinemas' is an array of the cinemas we want to search in
-    returns (for the moment) an array of movie objects {name, img_url, description}
+    Dummy movies
     */
-    function getMovies(date, cinemas) {
+    function getDummyMovies(date, cinemas) {
       var fCinema = filterSelectedCinemas(cinemas);
       return [{
         name: 'movie1',
@@ -109,16 +122,6 @@
       function fail(e) {
         return exception.catcher('XHR Failed for getMovies')(e);
       }
-    }
-
-    /**
-    Returns an array containing the cinema objects where selected is true
-    'cinemas' [{name,selected}]
-    */
-    function filterSelectedCinemas(cinemas) {
-      return cinemas.filter(function (cinema) {
-        return cinema.selected;
-      });
     }
   }
 })();
