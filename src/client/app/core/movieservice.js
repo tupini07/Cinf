@@ -19,6 +19,10 @@
             return $q.when(72);
         }
 
+        /*
+        Returns a promise of a movie list that corresponds to the searchParams.
+        'searchParams': {date: Date, cinemas:[{}], timeInterval: [] }
+        */
         function getMoviesPromise(searchParams) {
             var deferred = $q.defer();
             $timeout(function() {
