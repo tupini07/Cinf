@@ -3,5 +3,6 @@
 
   angular.module('app.movies', [
     'app.core',
+    'app.layout',
   ]);
 })();

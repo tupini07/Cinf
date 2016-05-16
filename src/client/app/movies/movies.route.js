@@ -14,19 +14,21 @@
   function getStates() {
     return [
       {
-        state: 'movies',
+        state: '/',
         config: {
           url: '/',
-          templateUrl: 'app/movies/movies.html',
-          controller: 'moviesController',
-          controllerAs: 'vm',
-          title: 'movies',
-          settings: {
-            nav: 1,
-            content: '<i class="fa fa-movies"></i> movies'
-          }
+          templateUrl: 'app/movies/searchCont.html',
+          title: 'Search'
         }
-      }
+      },
+      {
+        state: '/movieDetail',
+        config: {
+          url: '/movieDetail/:movieName',
+          templateUrl: 'app/movies/movieDetail.html',
+          title: 'Movie Detail'
+        }
+      },
     ];
   }
 })();

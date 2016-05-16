@@ -21,23 +21,6 @@
           title: '404'
         }
       },
-      {
-        state: '/',
-        config: {
-          url: '/',
-          templateUrl: 'app/layout/searchCont.html',
-          title: 'Search'
-        }
-      },
-      {
-        state: '/movieDetail',
-        config: {
-          url: '/movieDetail/:movieName',
-          templateUrl: 'app/layout/movieDetail.html',
-          title: 'Movie Detail'
-        }
-      },
-
     ];
   }
 })();
