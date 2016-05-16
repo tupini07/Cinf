@@ -1,3 +1,23 @@
-<div ng-controller="MovieDetailController as vm" style="padding-left:11px;">
-    Detail: {{vm.movieName}}
+<div ng-controller="MovieDetailController as mDetail" style="padding-left:11px;">
+  <div class="row">
+    <div class="col-sm-4" style="overflow:hidden;">
+      <img src="{{mDetail.movie.photo}}">
+    </div>
+    <div class="col-sm-8">
+      <h1>{{mDetail.movie.name}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>{{mDetail.movie.desc}}</h3>
+    </div>
+  </div>
+    <uib-accordion close-others="false">
+      <uib-accordion-group ng-repeat="show in mDetail.movie.shows">
+        <uib-accordion-heading>
+          {{show.cinema}}
+        </uib-accordion-heading>
+        <button style="margin:5px;" class="btn btn-sm btn-default" ng-repeat="hour in show.hours">{{hour}}</button>
+      </uib-accordion-group>
+    </uib-accordion>
 </div>

@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -27,7 +27,7 @@
           url: '/movieDetail/:movieName',
           templateUrl: 'app/movies/movieDetail.html',
           title: 'Movie Detail'
-        }
+        },
       },
     ];
   }
