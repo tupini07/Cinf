@@ -1,15 +1,14 @@
 <h4>{{$ctrl.lable}}</h4>
 <div style="padding-left: 15px;padding-right: 15px;">
-    <div class="row">
-        <div class="col-md-12" style="background: #ffffff;border-radius:5px;padding: 6px;color: #555;border: 1px solid #ccc;max-height:250px;overflow-y: scroll;">
-            <div ng-repeat="obj in $ctrl.objList">
-                <input type="checkbox" ng-model="obj[$ctrl.selectedName]"/>
-                {{obj[$ctrl.keyName]}} 
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-md-12" style="background: #ffffff;border-radius:5px;padding: 6px;color: #555;border: 1px solid #ccc;max-height:250px;overflow-y: scroll;">
+      <div ng-repeat="obj in $ctrl.objList">
+        <input type="checkbox" ng-model="obj[$ctrl.selectedName]" /> {{obj[$ctrl.keyName]}}
+      </div>
     </div>
-    <div class="row">
-        <button class="btn btn-md btn-warning" ng-click="$ctrl.setAll(false)">None</button>
-        <button class="btn btn-md btn-info" ng-click="$ctrl.setAll(true)">All</button>
-    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-md btn-warning" ng-click="$ctrl.setAll(false)">None</button>
+    <button class="btn btn-md btn-info" ng-click="$ctrl.setAll(true)">All</button>
+  </div>
 </div>

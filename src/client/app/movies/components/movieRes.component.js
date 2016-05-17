@@ -1,13 +1,13 @@
-  (function() {
-      'use strict';
+  (function () {
+    'use strict';
 
-      angular
-          .module('app.movies')
-          .component('movieRes', {
-              bindings: {
-                  movie: '<'
-              },
-              templateUrl: 'app/movies/components/movieRes.html'
-          });
+    angular
+      .module('app.movies')
+      .component('movieRes', {
+        bindings: {
+          movie: '<'
+        },
+        templateUrl: 'app/movies/components/movieRes.html'
+      });
 
   })();

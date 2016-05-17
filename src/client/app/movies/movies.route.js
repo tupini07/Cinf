@@ -18,7 +18,7 @@
         config: {
           url: '/',
           templateUrl: 'app/movies/movieSearch.html',
-          title: 'Search'
+          title: 'Movie Search'
         }
       },
       {

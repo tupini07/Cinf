@@ -20,15 +20,19 @@
       controller: checkboxPickerController,
       templateUrl: 'app/layout/components/checkboxPicker.html',
     });
-    function checkboxPickerController(){
-      var vm = this;
-      vm.setAll = setAll;
 
-      function setAll(val){
-        for(var objv in vm.objList){
-          vm.objList[objv][vm.selectedName] = val;
-        }
+  function checkboxPickerController() {
+    var vm = this;
+    vm.setAll = setAll;
+
+    /**
+     * Sets the 'selected' of every object to 'val'
+     */
+    function setAll(val) {
+      for (var objv in vm.objList) {
+        vm.objList[objv][vm.selectedName] = val;
       }
-
     }
+
+  }
 })();

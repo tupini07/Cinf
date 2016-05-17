@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -10,8 +10,7 @@
 
     activate();
 
-    function activate() {
-    }
+    function activate() {}
 
   }
 })();

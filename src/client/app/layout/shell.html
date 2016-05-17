@@ -1,17 +1,20 @@
 <div ng-controller="ShellController as vm">
-    <nav class="navbar navbar-default" style="margin:0;">
+  <div class="row">
+    <div class="col-xs-2" id="siedebar">
+      <nav class="navbar navbar-inverse" style="margin:0;">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Cinf</a>
-            </div>
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><b>Cinf</b></a>
+          </div>
         </div>
-    </nav>
-    <div class="row">
-        <div class="col-xs-2" id="siedebar" style="background: #eee;padding: 10px;height: 100%;">
-            <div ng-include="'app/layout/searchBar.html'"></div>
-        </div>
-        <div class="col-xs-10" id="mainContent" style="padding: 20px;">
-            <ui-view></ui-view>
-        </div>
+      </nav>
+      <div style="padding:15px;" ng-include="'app/layout/searchBar.html'"></div>
     </div>
+    <div class="col-xs-2">
+      <!-- hem hem... -->
+    </div>
+    <div class="col-xs-10" id="mainContent" style="padding: 20px;">
+      <ui-view></ui-view>
+    </div>
+  </div>
 </div>
