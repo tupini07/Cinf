@@ -24,12 +24,12 @@
   background: rgb(128, 175, 255);
 }
 
-#siedebar {
+#sidebar {
   background: #eee;
   padding: 0px !important;
   height: 100%;
   display: block;
-  position: absolute;
+  position: fixed;
 }
 
 @-webkit-keyframes uil-pacman-css-1 {

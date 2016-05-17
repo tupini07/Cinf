@@ -23,6 +23,8 @@
     <div class="col-sm-8">
       <h1>{{mDetail.movie.name}}</h1>
       <h3><b>Duration:</b> {{mDetail.movie.duration}}</h3>
+      <h3><b>Date:</b> {{mDetail.dateToLocale(mDetail.sparams.date)}}</h3>
+      <h3><b>Interval:</b> {{mDetail.sparams.timeInterval[0]}}h to {{mDetail.sparams.timeInterval[1]}}h</h3>
     </div>
   </div>
   <div class="row">

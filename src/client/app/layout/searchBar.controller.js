@@ -37,7 +37,7 @@
       var searchParams = {
         cinemas: vm.cinemas,
         date: vm.date,
-        timeInterval: vm.slider.element.value, //[from:Int, to:Int]
+        timeInterval: vm.slider.element.value.split(','), //[from:Int, to:Int]
       };
 
       //Starts a search on the moviesearch service and broadcasts it's promise which is caught
