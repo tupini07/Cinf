@@ -88,58 +88,24 @@
             lastSearchParams = $localStorage.lastSearchParams = searchParams;
             var deferred = $q.defer();
             $timeout(function() {
-                deferred.resolve(getDummyMovies(0, []));
+                deferred.resolve([{
+                    name: 'movie1',
+                    photo: 'https://unsplash.it/300/180/?random',
+                }, {
+                    name: 'movie2',
+                    photo: 'https://unsplash.it/200/180/?random',
+                }, {
+                    name: 'movie3',
+                    photo: 'https://unsplash.it/300/180/?random',
+                }, {
+                    name: 'movie4',
+                    photo: 'https://unsplash.it/250/180/?random',
+                }, {
+                    name: 'movie5',
+                    photo: 'https://unsplash.it/400/180/?random',
+                }, ]);
             }, 1000);
             return deferred.promise;
-        }
-
-
-
-
-
-        /**
-        Dummy movies
-        */
-        function getDummyMovies(date, cinemas) {
-            var fCinema = filterSelectedCinemas(cinemas);
-            return [{
-                name: 'movie1',
-                img: 'https://unsplash.it/300/180/?random',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
-                selected: true
-            }, {
-                name: 'movie2',
-                img: 'https://unsplash.it/200/180/?random',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
-                selected: true
-            }, {
-                name: 'movie3',
-                img: 'https://unsplash.it/300/180/?random',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
-                selected: true
-            }, {
-                name: 'movie4',
-                img: 'https://unsplash.it/250/180/?random',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
-                selected: true
-            }, {
-                name: 'movie5',
-                img: 'https://unsplash.it/400/180/?random',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam architecto fugiat eveniet velit sed adipisci nisi dolorem consectetur ipsum sunt!',
-                selected: true
-            }, ];
-
-            return $http.get('/api/people')
-                .then(success)
-                .catch(fail);
-
-            function success(response) {
-                return response.data;
-            }
-
-            function fail(e) {
-                return exception.catcher('XHR Failed for getMovies')(e);
-            }
         }
     }
 })();
