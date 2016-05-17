@@ -8,6 +8,7 @@
   movieService.$inject = ['$timeout', '$http', '$q', 'exception', 'logger'];
 
   function movieService($timeout, $http, $q, exception, logger) {
+    var lastSearchParams = {};
     var service = {
       getMovieByName: getMovieByName,
       searchMovies: searchMovies,
@@ -15,11 +16,14 @@
     return service;
 
     /**
-     * Gets a movie info from the server
+     * Gets a movie info from the server. First 'searchMovies' has to be called with search params so this function
+     * can access the date that we are interested in and the cinemas
      * @param   {string} name The name of the movie 
      * @returns {object} The promise for an object representing the movie or an empty one if none is found.
      */
     function getMovieByName(name) {
+      //http use lastSearchParams to get date, cinemas and use name param to get movies name
+      console.log(lastSearchParams);
       var deferred = $q.defer();
       $timeout(function () {
         deferred.resolve({
@@ -68,6 +72,7 @@
      * @returns {Array} Promise for a [{movie}] corresponding to searchParams
      */
     function searchMovies(searchParams) {
+      lastSearchParams = searchParams;
       var deferred = $q.defer();
       $timeout(function () {
         deferred.resolve(getDummyMovies(0, []));
