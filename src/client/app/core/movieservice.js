@@ -26,6 +26,7 @@
           name: 'moviex',
           photo: 'https://unsplash.it/400/180/?random',
           desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, provident.',
+          duration: '2:30',
           shows: [
             {
               cinema: 'ccm san pedro',

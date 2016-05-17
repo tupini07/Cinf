@@ -14,6 +14,11 @@
 
     return service;
 
+    /**
+     * Synchronously returns an array of cinemas
+     * @returns {Array} Of cinema objects.
+     */
+    
     function getCinemas() {
       return [{
         name: 'cinepolis terramall',
