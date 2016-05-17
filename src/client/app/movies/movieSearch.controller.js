@@ -19,7 +19,7 @@
 
       //recieves a promise of the movie search
       var searchRequestedListener = $scope.$on('searchRequested', function (subsData, promise) {
-        vm.status = 'Searching..';
+        vm.status = 'Searching';
         //result is the movies we searched for
         promise.then(function (result) {
             vm.movies = result;

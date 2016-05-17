@@ -10,7 +10,6 @@
   function movieService($timeout, $http, $q, exception, logger) {
     var service = {
       getMovieByName: getMovieByName,
-      getMovieDetail: getMovieDetail,
       searchMovies: searchMovies,
     };
     return service;

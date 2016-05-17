@@ -1,6 +1,14 @@
 <div ng-controller="MovieSearchController as vm" style="padding-left:11px;">
+
     <h2>Status:
         {{vm.status}}</h2>
+
+    <!--Loader from loading.io-->
+    <div style="margin-left:auto;margin-right:auto;" ng-if="vm.status === 'Searching'" class='uil-pacman-css' style='-webkit-transform:scale(0.78)'>
+        <div><div></div></div><div><div></div></div><div><div></div></div>
+    </div>
+    <!--Finish loader-->
+
     <div class="row">
         <movie-res class="col-md-2" ng-repeat="movie in vm.movies" movie="movie"></movie-res>
     </div>

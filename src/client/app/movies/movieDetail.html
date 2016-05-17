@@ -1,7 +1,17 @@
 <div ng-controller="MovieDetailController as mDetail" style="padding-left:11px;">
-  <div class="row">
+  <!--Loader from loading.io-->
+  <div ng-if="mDetail.loading" style="text-align:center;">
+    <div  class='uil-pacman-css' style='-webkit-transform:scale(0.78);margin-left:auto;margin-right:auto;'>
+      <div><div></div></div><div><div></div></div><div><div></div></div>
+    </div>
+    <h2>Loading...</h2>
+  </div>
+
+  <!--Finish loader-->
+
+  <div class="row" ng-if="!mDetail.loading">
     <div class="col-sm-4" style="overflow:hidden;">
-      <img src="{{mDetail.movie.photo}}">
+      <img width="400" height="180" src="{{mDetail.movie.photo}}">
     </div>
     <div class="col-sm-8">
       <h1>{{mDetail.movie.name}}</h1>
